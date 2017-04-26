@@ -37,7 +37,7 @@ public:
      * @brief Default Constructor.
      */
     Vector() {
-	// TODO: Implement this function.
+    	//BEN
     }
 
     /**
@@ -45,7 +45,10 @@ public:
      * @param other The vector from which we should copy from.
      */
     Vector(const Vector &other) {
-	// TODO: Implement this function.
+	//create a new vector of the size of the current one
+	Vector<int> copyVector = Vector(this->cap); //is there c++ syntax for creating a vector of a certain size??
+
+	//copy all data into the new one
     }
 
     /**
@@ -61,7 +64,7 @@ public:
      * @brief Destructor.
      */
     ~Vector(){
-	// TODO: Implement this function.
+	//BEN
     }
 
     typedef T* iterator;
@@ -80,7 +83,7 @@ public:
      * @return An iterator to one past the last element.
      */
     iterator end() {
-	// TODO: Implement this function.
+	//BEN
     }
 
     /**
@@ -96,7 +99,7 @@ public:
      * @return A const iterator to one past the last element.
      */
     constIterator end() const {
-	// TODO: Implement this function.
+	//BEN
     }
 
     /**
@@ -112,7 +115,7 @@ public:
      * @return The number of elements in the container.
      */
     std::size_t size() const {
-	// TODO: Implement this function.
+	//BEN
     }
 
     /**
@@ -130,7 +133,7 @@ public:
      *        If there are no elements in the container, then do nothing.
      */
     void popBack() {
-	// TODO: Implement this function.
+	//BEN
     }
 
     /**
@@ -150,7 +153,7 @@ public:
      *         No bounds checking is performed.
      */
     T &operator[](std::size_t pos) {
-	// TODO: Implement this function.
+	//BEN
     }
 
     /**
@@ -160,7 +163,7 @@ public:
      *         No bounds checking is performed.
      */
     const T &operator[](std::size_t pos) const {
-	// TODO: Implement this function.
+	//BEN
     }
 
     /**
@@ -206,8 +209,6 @@ public:
      *         If the iterator pos refers to the last element, the end() iterator is returned.
      */
     iterator erase(iterator pos) {
-	// TODO: Implement this function.
+	//BEN
     }
-};
-
-#endif //A6_VECTOR_HPP
+}
