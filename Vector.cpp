@@ -11,7 +11,7 @@
 //
 // // URL(s) of sources:
 //                 http://en.cppreference.com/w/cpp/container/vector
-//                 <URLs of your sources, if any>
+//		   
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <cstdio>
@@ -21,6 +21,7 @@
 /**
  * @brief A templated sequence container that encapsulates dynamic size arrays.
  */
+
 template<typename T>
 class Vector {
 private:
@@ -46,9 +47,11 @@ public:
      */
     Vector(const Vector &other) {
 	//create a new vector of the size of the current one
-	Vector<int> copyVector = Vector(this->cap); //is there c++ syntax for creating a vector of a certain size??
-
-	//copy all data into the new one
+	Vector<int> copyVector = Vector();
+	*copyVector = *other.copyVector;
+	return copyVector;
+	
+	//https://www.tutorialspoint.com/cplusplus/cpp_copy_constructor.htm
     }
 
     /**
@@ -57,7 +60,7 @@ public:
      * @return A reference to the vector on the LHS.
      */
     Vector &operator=(const Vector &other) {
-	// TODO: Implement this function.
+	//idenitacal code to copy constructo
     }
 
     /**
@@ -75,7 +78,8 @@ public:
      * @return An iterator to the first element.
      */
     iterator begin() {
-	// TODO: Implement this function.
+	iterator it = elems[0];
+	return it;
     }
 
     /**
@@ -91,7 +95,9 @@ public:
      * @return A const iterator to the first element.
      */
     constIterator begin() const {
-	// TODO: Implement this function.
+	constIterator constIt = elems[0];
+	return cosntIt;
+	//how is this different??
     }
 
     /**
@@ -107,7 +113,7 @@ public:
      * @return The number of elements that can be held in currently allocated storage.
      */
     std::size_t capacity() const {
-	// TODO: Implement this function.
+    	return cap;
     }
 
     /**
@@ -124,7 +130,9 @@ public:
      * @param elem The element to be added.
      */
     void pushBack(T elem) {
-	// TODO: Implement this function.
+	//use end()?? or otherwise find the iterator pointing to the end
+	//if get next of that is null, double the array using reserve()
+	//put the new element in the spot
     }
 
     /**
@@ -143,7 +151,8 @@ public:
      * @param new_cap new capacity of the container.
      */
     void reserve(std::size_t new_cap) {
-	// TODO: Implement this function.
+	//create new array of elements of the desired size and set elems to that new array
+	//copy current data to new array leaving the empty spots
     }
 
     /**
@@ -191,7 +200,12 @@ public:
      * @return true if the container is empty, false otherwise.
      */
     bool empty() const {
-	// TODO: Implement this function.
+	for (int i = 0; i < *elems.sizeof(); i++) {
+		if (elems[i] != NULL) {
+			return false;
+		}
+	}
+	return true;
     }
 
     /**
@@ -199,7 +213,10 @@ public:
      *        Leaves the capacity of the vector unchanged.
      */
     void clear() {
-	// TODO: Implement this function.
+	int i;
+	for (i = 0; i<=elems.sizeof(); i++) {
+		*elems[i] = ~; //what am i deconstructing here? each element?
+				//what IS the deal with arrays in c++
     }
 
     /**
