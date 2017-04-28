@@ -38,7 +38,9 @@ public:
      * @brief Default Constructor.
      */
     Vector() {
-    	//BEN
+    	//Ben, I implemented this so I could test my own fucntions
+	cap = intialCapacity;
+	*elems[cap];
     }
 
     /**
@@ -213,10 +215,9 @@ public:
      *        Leaves the capacity of the vector unchanged.
      */
     void clear() {
-	int i;
-	for (i = 0; i<=elems.sizeof(); i++) {
-		*elems[i] = ~; //what am i deconstructing here? each element?
-				//what IS the deal with arrays in c++
+	for (int i = 0; i<=elems.sizeof(); i++) {
+		elems[i] = null; 
+	}
     }
 
     /**
